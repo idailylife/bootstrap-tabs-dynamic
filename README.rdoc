@@ -2,6 +2,10 @@
 
 A framework for adding, remove, renaming and in general handling Twitter Bootstrap Tabs through JavaScript.
 
+Modified by Bowei:
+1. Enhance the stability of tab assessment
+2. Add functions `moveForward` and `moveBackward`
+
 = Examples
 
 @nick322 has set up this exelent JS Fiddle: http://jsfiddle.net/0ua2gzyc/
@@ -40,3 +44,13 @@ You can also add it by an element already defined (maybe as hidden?):
   a.click(function(){
     tab_id = $(this).currentBSTabID()
   })
+
+
+== (New) Moving tab forward/backward
+
+  tab = tabs.getBSTabByID("id_of_tab");
+  tab.moveForward(); //tab.moveBackward();
+
+  //Or use this to move tab till the 'bound' item
+  //使用此传入参数，可以设置向前移动的'界限'
+  tab.moveForward("idToForbid");
